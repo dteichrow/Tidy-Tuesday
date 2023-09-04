@@ -1,0 +1,30 @@
+{r}
+wage_means <- wages %>% 
+  group_by(year) %>%
+  summarise(
+    mean_union_wage = mean(union_wage, na.rm = TRUE),
+    mean_nonunion_wage = mean(nonunion_wage, na.rm = TRUE)
+  )
+
+ggplot(wage_means, aes(x = year)) +
+  geom_rect(aes(xmin = min(year), xmax = max(year), ymin = min(c(mean_union_wage, mean_nonunion_wage)), ymax = max(c(mean_union_wage, mean_nonunion_wage))), fill = "white") +
+  
+  geom_point(aes(y = mean_union_wage, color = "Union Wage"), shape = 16, size = 4) +
+  geom_line(aes(y = mean_union_wage, color = "Union Wage"), size = 1.2) +
+  
+  geom_point(aes(y = mean_nonunion_wage, color = "Non-Union Wage"), shape = 17, size = 4) +
+  geom_line(aes(y = mean_nonunion_wage, color = "Non-Union Wage"), size = 1.2) +
+  
+
+  scale_y_continuous(labels = function(x) paste0("$", round(x, 1), "K")) +
+  
+  labs(title = "Union vs Non-Union Mean Wages Over Time (Aggregated)",
+       subtitle = "Yearly Averages",
+       x = "Year",
+       y = "Mean Wage (in thousands)",
+       caption = "Source: CPS Surveys",
+       color = "Wage Type") +
+  
+  scale_color_manual(values = c("Union Wage" = "#2774AE", "Non-Union Wage" = "#FFD100")) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
