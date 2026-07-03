@@ -1,5 +1,5 @@
 ---
-title: "Week 35 Tidy Tuesday"
+title: "Tidy Tuesday: Fair Use Index"
 format: html
 editor: visual
 ---

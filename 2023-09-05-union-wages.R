@@ -1,4 +1,8 @@
-{r}
+# Exploratory Tidy Tuesday plotting fragment.
+#
+# Expects a `wages` data frame with `year`, `union_wage`, and `nonunion_wage`
+# columns loaded from the relevant Tidy Tuesday dataset.
+
 wage_means <- wages %>% 
   group_by(year) %>%
   summarise(

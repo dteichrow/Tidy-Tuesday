@@ -8,10 +8,10 @@ practice.
 
 ## Contents
 
-- `Week 35 (Fair Use).qmd` explores the U.S. Copyright Office Fair Use Index,
+- `2023-08-29-fair-use-index.qmd` explores the U.S. Copyright Office Fair Use Index,
   including table extraction, PDF parsing, text cleaning, and basic
   visualization experiments.
-- `9-5-23 (Union wages)` is a short R plotting fragment comparing union and
+- `2023-09-05-union-wages.R` is a short R plotting fragment comparing union and
   non-union wage means over time.
 
 ## What It Demonstrates
